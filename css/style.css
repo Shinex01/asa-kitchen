@@ -834,8 +834,10 @@ footer .footer-bottom {
 }
 
 .contact-map-placeholder iframe {
-    border-radius: 16px;
-    height: 350px;
+  filter: grayscale(100%) invert(92%) contrast(83%);
+  border-radius: 16px; 
+  border: var(--BORDER); 
+  height: 350px;
 }
 
 
