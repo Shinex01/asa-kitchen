@@ -41,16 +41,6 @@ button {
 
     /* Border */
     --BORDER: 1px solid var(--BORDER-COLOR);
-
-    /* Paddings */
-    --PADDING-SM: 0.5rem;
-    --PADDING-MD: 1rem;
-    --PADDING-LG: 2rem;
-
-    /* Margins */
-    --MARGIN-SM: 0.5rem;
-    --MARGIN-MD: 1rem;
-    --MARGIN-LG: 2rem;
 }
 
 
@@ -348,24 +338,22 @@ footer .footer-bottom {
     border: var(--BORDER);
     border-radius: 16px;
     overflow: hidden;
-    transition: box-shadow 0.5s ease, transform 0.5s ease;
+    transition: box-shadow 0.3s ease;
 }
 
-.dish-card img {
+.dish-card img{
     width: 100%;
     height: 200px;
     object-fit: cover;
-    transition: box-shadow 0.5s ease, transform 0.5s ease;
+    transition: transform 0.5s ease;
 }
 
 .dish-card:hover {
     box-shadow: 0 0 5px var(--ACCENT-COLOR);
-    transform: scale(1.01);
 }
 
-.dish-card img:hover {
-    box-shadow: 0 0 5px var(--ACCENT-COLOR);
-    transform: scale(1.05);
+.dish-card:hover img {
+    transform: scale(1.07);
 }
 
 .dish-card h3 {
@@ -377,7 +365,7 @@ footer .footer-bottom {
 .dish-card p {
     font-size: 0.9em;
     line-height: 1.4;
-    padding-left: 1.1em;
+    padding-left: 1.2em;
     padding-top: 0.5em;
 }
 
@@ -549,31 +537,29 @@ footer .footer-bottom {
     flex-direction: column;
     gap: 1.5rem;
     overflow: hidden;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    transition: box-shadow 0.3s ease;
 }
 
 .menu-item img{
     width: 100%;
     height: 200px;
     object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
 .menu-item:hover {
     box-shadow: 0 0 5px var(--ACCENT-COLOR);
-    transform: scale(1.01);
 }
 
-.menu-item img:hover {
-    box-shadow: 0 0 5px var(--ACCENT-COLOR);
-    transform: scale(1.06);
+.menu-item:hover img {
+    transform: scale(1.07);
 }
 
 .menu-item-info {
     display: flex;
     flex-direction: column;
     gap: 0.6em;
-    padding-left: 1em;
-    padding-bottom: 1em;
+    padding: 0 1rem 1rem 1rem;
 }
 
 .menu-item-info h3 {
@@ -658,10 +644,25 @@ footer .footer-bottom {
     background-color: var(--BG-SECONDARY);
     padding: 1.5rem;
     text-align: center;
+    transition: border 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.value-card .value-icon {
-    font-size: 1.7rem;
+.value-card:hover {
+    border:1px solid var(--ACCENT-COLOR);
+    box-shadow: 0 0 5px var(--ACCENT-COLOR);
+    transform: translateY(0.5px);
+}
+
+.value-card .value-icon i {
+    padding: 10px;
+    background-color: var(--BG-PRIMARY);
+    border: 1px solid var(--ACCENT-COLOR);
+    color: var(--ACCENT-COLOR);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22PX;
 }
 
 .value-card h3 {
@@ -723,33 +724,43 @@ footer .footer-bottom {
 
 .contact-info-card {
     width: 100%;
-    background-color: var(--TEXT-PRIMARY);
-    color: var(--BG-PRIMARY);
+    background-color: var(--BG-SECONDARY);
+    color: var(--TEXT-PRIMARY);
     border: var(--BORDER);
     border-radius: 16px;
-    padding: 1.5rem;
+    padding: 1.7rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
+.contact-info-card strong {
+    font-family: var(--HEADING-FF);
+    color: var(--ACCENT-COLOR);
+}
+
+
 .contact-info-card address {
     margin-top: 0.5rem;
     margin-left: 1.55rem;
+    font-family: var(--BODY-FF);
+    color: var(--TEXT-MUTED);
 }
 
 .contact-info-card p {
     margin-top: 0.5rem;
     margin-left: 1.8rem;
+    font-family: var(--BODY-FF);
+    color: var(--TEXT-MUTED);
 }
 
 .contact-form-article {
     width: 100%;
-    background-color: var(--TEXT-PRIMARY);
-    color: var(--BG-PRIMARY);
-    padding: 1.5rem;
+    background-color: var(--BG-SECONDARY);
+    color: var(--TEXT-PRIMARY);
     border: var(--BORDER);
     border-radius: 16px;
+    padding: 1.7rem;
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
@@ -757,7 +768,8 @@ footer .footer-bottom {
 
 .contact-form-article h2 {
     text-align: center;
-    color: var(--BG-PRIMARY);
+    color: var(--ACCENT-COLOR);
+    font-family: var(--HEADING-FF);
 }
 
 .contact-form {
@@ -766,16 +778,33 @@ footer .footer-bottom {
     gap: 2rem;
 }
 
+.contact-form label {
+    font-family: var(--BODY-FF);
+    color: var(--TEXT-PRIMARY);
+    font-weight: 500;
+}
+
 .contact-form input,
 .contact-form textarea {
     margin-left: 0.5rem;
     padding: 0.5rem 0.8rem;
     border: var(--BORDER);
     border-radius: 8px;
+    background-color: var(--BG-PRIMARY);
+    color: var(--TEXT-PRIMARY);
+    font-family: var(--BODY-FF);
+    font-size: 1em;
+    transition: border-color 0.3s ease;
 }
 
-.contact-form label {
-    font-weight: 600;
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--ACCENT-COLOR);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--TEXT-MUTED);
 }
 
 .form-group {
@@ -786,10 +815,12 @@ footer .footer-bottom {
 
 .contact-form-btn {
     background-color: var(--ACCENT-COLOR);
+    color: var(--BG-PRIMARY);
     padding: 0.7rem 1rem;
     font-weight: 600;
-    border: 1PX solid var(--ACCENT-COLOR);
+    border: none;
     border-radius: 25px;
+    cursor: pointer;
     transition: opacity 0.3s ease;
 }
 
@@ -829,8 +860,8 @@ footer .footer-bottom {
 .reservation-form-section {
     margin: 0 auto;
     margin-bottom: 3.5rem;
-    background-color: var(--TEXT-PRIMARY);
-    color: var(--BG-PRIMARY);
+    background-color: var(--BG-SECONDARY);
+    color: var(--TEXT-PRIMARY);
     padding: 1.5rem;
     border: var(--BORDER);
     border-radius: 16px;
@@ -841,7 +872,8 @@ footer .footer-bottom {
 
 .reservation-form-section h2 {
     text-align: center;
-    color: var(--BG-PRIMARY);
+    color: var(--ACCENT-COLOR);
+    font-family: var(--HEADING-FF);
 }
 
 .reservation-form {
@@ -851,21 +883,53 @@ footer .footer-bottom {
 }
 
 .reservation-form input,
-.reservation-form textarea {
+.reservation-form textarea,
+.reservation-form select {
+    width: 100%;
     padding: 0.5rem 0.8rem;
     border: var(--BORDER);
     border-radius: 8px;
+    font-family: var(--BODY-FF);
+    background-color: var(--BG-PRIMARY);
+    color: var(--TEXT-PRIMARY);
+    font-size: 1em;
+    transition: border-color 0.3s ease;
 }
 
 .reservation-form label {
-    font-weight: 600;
+    font-weight: 500;
+    font-family: var(--BODY-FF);
+    color: var(--TEXT-PRIMARY);
+}
+
+.reservation-form input:focus,
+.reservation-form textarea:focus {
+    border-color: var(--ACCENT-COLOR);
+}
+
+.reservation-form input::placeholder,
+.reservation-form textarea::placeholder {
+    color: var(--TEXT-MUTED);
+}
+
+.reservation-form input[type="date"],
+.reservation-form input[type="time"] {
+    width: 100%;
+}
+
+.reservation-form textarea {
+    padding: 0.7rem 1rem;
+    font-family: var(--BODY-FF);
+    resize: vertical;
 }
 
 .reservation-form-btn {
     background-color: var(--ACCENT-COLOR);
+    font-family: var(--BODY-FF);
+    color: var(--BG-PRIMARY);
     padding: 0.7rem 1rem;
     font-weight: 600;
-    border: 1PX solid var(--ACCENT-COLOR);
+    border: none;
     border-radius: 25px;
     transition: opacity 0.3s ease;
 }
